@@ -1,0 +1,5 @@
+127.0.0.1
+3000
+##############
+Enter IP Adress in line 1.
+Enter Host Port (Not Multiplayer port) in line 2.
