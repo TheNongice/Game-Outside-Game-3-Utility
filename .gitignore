@@ -128,4 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Javascript Version
 js/
+
+# Useless Folders
+.idea/
+python/.idea/
