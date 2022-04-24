@@ -54,13 +54,21 @@ def CONFIG_GUI():
 
 def save_ip(*args):
     clues = open('connect.txt', 'w')
-    clues.writelines(f'{ip.get()}\n{port.get()}')
+    ips = ip.get()
+    ports = port.get()
+    if (ports == '') and (ips == ''):
+        ips = '127.0.0.1'
+        ports = '3000'
+    else:
+        pass
+    clues.writelines(f'{ips}\n{ports}')
     clues.close()
     msg_gui.configure(text='DATA HAVE BEEN CHANGED!')
     msg_gui.after(1500,clear_status)
 
 def clear_status():
     msg_gui.configure(text="")
+
 def BF():
     APIs = GameAPI()
     MsgBox = messagebox.askquestion('Warning!', 'Are you sure you want to Bruteforce now?', icon='warning')

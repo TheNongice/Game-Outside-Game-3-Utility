@@ -1,9 +1,11 @@
 import requests
 
-
 class GameAPI:
     def __init__(self):
-        clues_conn = open('connect.txt', 'r')
+        try:
+            clues_conn = open('connect.txt', 'r')
+        except FileNotFoundError:
+            exit()
         ip = str(clues_conn.readlines(1))[2:-4]
         port = int(clues_conn.readlines(2)[0])
         self.url = f"http://{ip}:{port}/answers"
